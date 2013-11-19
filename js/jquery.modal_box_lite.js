@@ -32,6 +32,7 @@ $('.modal_box').modal_box_lite({
         options.html_el.hide();
 		//Click event on element
 		return this.click(function(e){
+            e.preventDefault();
 			add_block_page();
 			add_popup_box();
 			add_styles();
@@ -117,7 +118,8 @@ $('.modal_box').modal_box_lite({
 			 var pop_up = $('<div class=' + options.class_modal_box+'><a href="#" class='+options.class_modal_box_close+'></a><div class="paulund_inner_modal_box">' + options.html_el.html() + '</div></div>');
 			 $(pop_up).appendTo('body');
 
-			 $('.'+options.class_modal_box_close).click(function(){
+			 $('.'+options.class_modal_box_close).click(function(e){
+                 e.preventDefault();
 				hide_modal_box();
 			 });
              $('.'+options.class_bag_box).click(function(){
